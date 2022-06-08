@@ -17,55 +17,38 @@
 
 2. Get a AMI ID for Kubernetes worker node EC2
 
-    
+   [Kubernetes version](https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html)
+
+   [EKS Optimized AMI](https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html)
+   
+   ***Change `<K8s Version>` to your desired kubernetes version***
+   
+    ```console
+    K8S_VERSION = <K8s Version>
+    echo $K8S_VERSION
+    ```
 
     ```console
-    aws cloudformation create-stack \
-      --stack-name Cloud9IDE \
-      --template-body file://./EC2-Cloud9.yaml
+    AMI_ID = $(aws ssm get-parameter \
+      --name /aws/service/eks/optimized-ami/$K8S_VERSION/amazon-linux-2/recommended/image_id \
+      --query "Parameter.Value" --output text)
+    echo $AMI_ID
     ```    
 
 2. Create an AWS CloudFormation stack
 
     ```console
     aws cloudformation create-stack \
-      --stack-name Cloud9IDE \
-      --template-body file://./EC2-Cloud9.yaml
+      --stack-name K8sBasics \
+      --template-body file://./K8sCluster.yaml \
+      --parameters ParameterKey=WorkerImageID,ParameterValue=$IMAGE_ID \
+      ParameterKey=K8sVersion,ParameterValue=$K8S_VERSION
     ```
 
-3. Verify the instance security group creation completed by the CloudFormation stack's events in AWS management console
-
-    <img src="https://github.com/t2yijaeho/Docker-with-AWS-Cloud9/blob/matia/images/SecurityGroup%20Complete.png?raw=true">
-    
-
-4. Add inboud rule to AWS Cloud9 EC2 Security Group
-
-    ***It may need some time to get proper Security Group ID (such as sg-01a234b567cd890ef)***
-
-    Find AWS Cloud9 EC2 Security Group ID
-    ```bash
-    CLOUD9_SECURITY_GROUP_ID=$(aws ec2 describe-security-groups \
-      --filters Name=group-name,Values=*Docker-Basics* \
-      --query "SecurityGroups[*].[GroupId]" \
-      --output text)
-    echo $CLOUD9_SECURITY_GROUP_ID
-    ```
-    
-5. Add Local Machine IP address to Security Group inboud rule
-    
-   Get your local machine public IP address in the browser
-   [Your public IP address](http://checkip.amazonaws.com/)
-    
-   ***Change `<My IP>` to your local machine IP address (ParameterValue must be in CIDR notation)***
-    
-    ```console
-    aws ec2 authorize-security-group-ingress \
-      --group-id $CLOUD9_SECURITY_GROUP_ID \
-      --protocol all \
-      --cidr "<My IP>/32"
-    ```
-
-6. Monitor the progress by the CloudFormation stack's events in AWS management console
+3. Monitor the progress by the CloudFormation stack's events in AWS management console
 
     <img src="https://github.com/t2yijaeho/Docker-with-AWS-Cloud9/blob/matia/images/CloudFormation%20Stack%20Creation%20Events.png?raw=true">
     
+
+## 3. Configure Kubernetes control plane
+
