@@ -350,14 +350,14 @@ Resources:
   #============================================================================#
 
   WorkerNodesAutoScalingGroup:
-    Type:   
+    Type: AWS::AutoScaling::AutoScalingGroup
     UpdatePolicy:
       AutoScalingRollingUpdate:
         MinInstancesInService: 1
         MaxBatchSize: 1
     Properties:
       LaunchConfigurationName: !Ref WorkerNodesLaunchConfiguration
-      MinSize: 0
+      MinSize: 1
       MaxSize: 2
       VPCZoneIdentifier:
         - !Ref PrivateSubnet1
@@ -394,12 +394,9 @@ Resources:
       ClusterName: !Sub "${AWS::StackName}"
       NodeRole: !GetAtt WorkerNodesRole.Arn
       ScalingConfig:
-        MinSize:
-          Ref: NumWorkerNodes
-        DesiredSize:
-          Ref: NumWorkerNodes
-        MaxSize:
-          Ref: NumWorkerNodes
+        MinSize: 1
+        DesiredSize: 2
+        MaxSize: 2
       Subnets:
         - !Ref PrivateSubnet1
         - !Ref PrivateSubnet2
