@@ -41,7 +41,7 @@
     aws cloudformation create-stack \
       --stack-name K8sBasics \
       --template-body file://./K8sCluster.yaml \
-      --parameters ParameterKey=WorkerImageID,ParameterValue=$IMAGE_ID \
+      --parameters ParameterKey=WorkerImageID,ParameterValue=$AMI_ID \
                    ParameterKey=K8sVersion,ParameterValue=$K8S_VERSION \
       --capabilities CAPABILITY_IAM
     ```
