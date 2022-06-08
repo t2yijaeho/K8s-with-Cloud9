@@ -29,7 +29,7 @@
     ```
 
     ```console
-    AMI_ID = $(aws ssm get-parameter \
+    AMI_ID=$(aws ssm get-parameter \
       --name /aws/service/eks/optimized-ami/$K8S_VERSION/amazon-linux-2/recommended/image_id \
       --query "Parameter.Value" --output text)
     echo $AMI_ID
