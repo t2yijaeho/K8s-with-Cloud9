@@ -24,7 +24,7 @@
    ***Change `<K8s Version>` to your desired kubernetes version***
    
     ```console
-    K8S_VERSION = <K8s Version>
+    K8S_VERSION=<K8s Version>
     echo $K8S_VERSION
     ```
 
