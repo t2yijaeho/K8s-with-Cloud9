@@ -9,7 +9,7 @@ Parameters:
     Default: 1.22
   WorkerImageID:
     Type: String
-    Description: AMI ID for 
+    Description: AMI ID for Worker Node
     Default: Standard
   #KeyPairName:
     #Type: String
@@ -71,7 +71,7 @@ Resources:
           Value: 1
         - Key: !Sub "kubernetes.io/cluster/${AWS::StackName}"
           Value: shared
- PrivateSubnet1:
+  PrivateSubnet1:
     Type: AWS::EC2::Subnet
     Properties:
       VpcId: !Ref VPC
