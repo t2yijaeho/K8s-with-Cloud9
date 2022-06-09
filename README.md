@@ -57,11 +57,11 @@
 
     [AWS Guide to install kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
     
-    Set kubectl version, release date according to Kubernetes version
+    ***Set `kubectl version`, `release date` according to Kubernetes version***
     
     ```console
-    KUBECTL_VERSION="<kubectl Version"
-    RELEASE_DATE="<"
+    KUBECTL_VERSION="<kubectl version>"
+    RELEASE_DATE="<release date>"
     echo $KUBECTL_VERSION
     echo $RELEASE_DATE
     ```
