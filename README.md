@@ -60,16 +60,25 @@
     Set kubectl version, release date according to Kubernetes version
     
     ```console
-    K8S_VERSION="1.22.6"
-    RELEASE_DATE="2022-03-09"
-    echo $K8S_VERSION
+    KUBECTL_VERSION="<kubectl Version"
+    RELEASE_DATE="<"
+    echo $KUBECTL_VERSION
     echo $RELEASE_DATE
+    ```
+    ```console
+    mspuser:~/environment $ KUBECTL_VERSION="1.22.6"
+    mspuser:~/environment $ RELEASE_DATE="2022-03-09"
+    mspuser:~/environment $ echo $KUBECTL_VERSION
+    1.22.6
+    mspuser:~/environment $ echo $RELEASE_DATE
+    2022-03-09
+    mspuser:~/environment $ 
     ```
     
     Download the Amazon EKS vended kubectl binary
     
     ```console
-    curl -o kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/$K8S_VERSION/$RELEASE_DATE/bin/linux/amd64/kubectl
+    curl -o kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/$KUBECTL_VERSION/$RELEASE_DATE/bin/linux/amd64/kubectl
     ```
 
     Apply execute permissions to the binary
