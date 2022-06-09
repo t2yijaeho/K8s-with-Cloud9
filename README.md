@@ -57,7 +57,7 @@
 
     [AWS Guide to install kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
     
-    Set kubectl version, release date according to kubernetes version
+    Set kubectl version, release date according to Kubernetes version
     
     ```console
     K8S_VERSION="1.22.6"
