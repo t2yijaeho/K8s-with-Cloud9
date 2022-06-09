@@ -53,3 +53,42 @@
 
 ## 3. Configure Kubernetes control plane
 
+1. Install kubectl (Kubernetes command line utility)
+
+    [AWS Guide to install kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
+    
+    Set kubectl version, release date according to kubernetes version
+    
+    ```console
+    K8S_VERSION="1.22.6"
+    RELEASE_DATE="2022-03-09"
+    echo $K8S_VERSION
+    echo $RELEASE_DATE
+    ```
+    
+    Download the Amazon EKS vended kubectl binary
+    
+    ```console
+    curl -o kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/$K8S_VERSION/$RELEASE_DATE/bin/linux/amd64/kubectl
+    ```
+
+    Apply execute permissions to the binary
+    ```console
+    chmod +x ./kubectl
+    ```
+    
+    Copy the binary to a folder in PATH
+    ```console
+    mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
+    ```
+    
+    Verify kubectl version
+    ```console
+    kubectl version --short --client
+    ```
+
+    ```console
+    mspuser:~/environment $ kubectl version --short --client
+    Client Version: v1.22.6-eks-7d68063
+    mspuser:~/environment $ 
+    ```
