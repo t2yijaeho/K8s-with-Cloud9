@@ -46,7 +46,7 @@
       --capabilities CAPABILITY_IAM
     ```
 
-3. Monitor the progress by the CloudFormation stack's events in AWS management console
+3. Monitor the progress by the CloudFormation stack's events in AWS management console (
 
     <img src="https://github.com/t2yijaeho/Docker-with-AWS-Cloud9/blob/matia/images/CloudFormation%20Stack%20Creation%20Events.png?raw=true">
     
@@ -60,14 +60,14 @@
     ***Set `kubectl version`, `release date` according to Kubernetes version***
     
     ```console
-    KUBECTL_VERSION="<kubectl version>"
-    RELEASE_DATE="<release date>"
+    KUBECTL_VERSION=<kubectl version>
+    RELEASE_DATE=<release date>
     echo $KUBECTL_VERSION
     echo $RELEASE_DATE
     ```
     ```console
-    mspuser:~/environment $ KUBECTL_VERSION="1.22.6"
-    mspuser:~/environment $ RELEASE_DATE="2022-03-09"
+    mspuser:~/environment $ KUBECTL_VERSION=1.22.6
+    mspuser:~/environment $ RELEASE_DATE=2022-03-09
     mspuser:~/environment $ echo $KUBECTL_VERSION
     1.22.6
     mspuser:~/environment $ echo $RELEASE_DATE
