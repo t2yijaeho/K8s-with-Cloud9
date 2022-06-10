@@ -6,16 +6,21 @@
    [AWS Cloud9](https://github.com/t2yijaeho/Docker-with-AWS-Cloud9)
 
 
-## 2. Create Kubernetes cluster
-
-### 1. Choose a proper way to build Kubernetes environment
-
-1. Install local Kubernetes with minikube on AWS Cloud9 environment
-2. Create Amazon EKS cluster and node group with eksctl
-3. [Create Amazon EKS cluster and node group in new VPC with AWS CloudFormation](https://github.com/t2yijaeho/Amazon-EKS-with-CloudFormation/)
+## 2. Choose a proper way to build Kubernetes environment
 
 
-## 3. Configure Kubernetes control plane
+### 1. Install local Kubernetes with minikube on AWS Cloud9 environment
+
+
+### 2. Create Amazon EKS cluster and node group with eksctl
+
+
+### 3. [Create Amazon EKS cluster and node group in new VPC with AWS CloudFormation](https://github.com/t2yijaeho/Amazon-EKS-with-CloudFormation/)
+
+1. Get 
+2. Set
+
+## 3. Configure Kubernetes
 
 ### 1. Install kubectl (Kubernetes command line utility)
 
