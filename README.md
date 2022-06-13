@@ -17,8 +17,8 @@
 
 ### 3. [Create Amazon EKS cluster and node group in new VPC with AWS CloudFormation](https://github.com/t2yijaeho/Amazon-EKS-with-CloudFormation/)
 
-1. Get 
-2. Set
+1. Attach role to Cloud9 instance
+2. Change Cloud9 credentials settings
 
 ## 3. Configure Kubernetes
 
@@ -26,7 +26,7 @@
 
 1. Refer to [AWS Guide to install kubectl](https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html)
     
-    ***Set `kubectl version`, `release date` according to Kubernetes version***
+    ***Set `<kubectl version>`, `<release date>` according to Kubernetes version***
     
     ```console
     KUBECTL_VERSION=<kubectl version>
