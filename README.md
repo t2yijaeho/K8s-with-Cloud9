@@ -12,7 +12,7 @@
 ### 1. [Launch local Kubernetes with minikube on AWS Cloud9](https://github.com/t2yijaeho/minikube-on-AWS-Cloud9/)
 
 
-### 2. Create Amazon EKS cluster and node group with eksctl
+### 2. [Launch Amazon EKS cluster with eksctl](https://github.com/t2yijaeho/Amazon-EKS-with-eksctl)
 
 
 ### 3. [Create Amazon EKS cluster and node group in new VPC with AWS CloudFormation](https://github.com/t2yijaeho/Amazon-EKS-with-CloudFormation/)
