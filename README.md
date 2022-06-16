@@ -6,7 +6,7 @@
    [AWS Cloud9](https://github.com/t2yijaeho/Docker-with-AWS-Cloud9)
 
 
-## 2. Choose a proper way to build Kubernetes environment
+## 2. Choose a right way to build Kubernetes environment
 
 
 ### 1. [Launch local Kubernetes with minikube](https://github.com/t2yijaeho/minikube-on-AWS-Cloud9/)
