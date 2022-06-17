@@ -9,6 +9,15 @@
 ## 2. Choose a right way to build Kubernetes environment
 
 
+### 1. Attach role to Cloud9 instance
+
+
+### 2. Change Cloud9 credentials settings
+
+
+## 3. Choose a right way to build Kubernetes environment
+
+
 ### 1. [Launch local Kubernetes with minikube](https://github.com/t2yijaeho/minikube-on-AWS-Cloud9/)
 
 
@@ -17,12 +26,8 @@
 
 ### 3. [Create Amazon EKS cluster with AWS CloudFormation](https://github.com/t2yijaeho/Amazon-EKS-with-CloudFormation/)
 
-1. Attach role to Cloud9 instance
 
-2. Change Cloud9 credentials settings
-
-
-## 3. Configure Kubernetes
+## 4. Configure Kubernetes
 
 
 ### 1. Install kubectl (Kubernetes command line utility)
